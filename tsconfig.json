@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "NodeNext",
+        "moduleResolution": "NodeNext",
+        "target": "ES2016",
+        "lib": ["ESNext"],
+        "outDir": "dist",
+        "baseUrl": "./",
+        "paths": {
+            "@/*": ["./*"]
+        },
+        "sourceMap": true,
+        "allowImportingTsExtensions": true,
+        "noEmit": true
+    },
+    "include": ["src/**/*"]
+}

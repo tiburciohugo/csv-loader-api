@@ -1,0 +1,15 @@
+## Node Modules
+node_modules
+
+## Local env variables
+.env
+.env*.local
+
+## build output
+/dist
+
+## misc
+.csv
+
+## database
+*.sqlite
