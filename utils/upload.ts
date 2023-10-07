@@ -1,6 +1,7 @@
-import { User } from "../models/User";
+import { Request, Response } from "express";
 import multer from "multer";
 import * as csv from "fast-csv";
+import { User } from "../models/User";
 import { CsvData } from "../types";
 import { PassThrough } from "stream";
 
@@ -8,7 +9,7 @@ const storage = multer.memoryStorage();
 
 export const upload = multer({ storage: storage });
 
-export async function processCsvData(req, res) {
+export async function processCsvData(req: Request, res: Response) {
     try {
         const csvData: CsvData[] = [];
         const bufferStream = new PassThrough();
