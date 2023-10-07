@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import morgan from "morgan";
 import * as dotenv from "dotenv";
+import router from "../routes/router";
+import { initializeDatabase } from "../db/index";
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;
@@ -23,6 +25,11 @@ app.use(
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(morgan("dev"));
+
+initializeDatabase();
+
+app.use("/api", router);
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT} -> http://localhost:${PORT}`);
